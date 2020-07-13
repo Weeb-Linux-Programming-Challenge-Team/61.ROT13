@@ -18,3 +18,5 @@ jobs:
           command: |
             flake8 --statistics
             pytest -v --cov=main
+      - store_test_results:
+          path: test-results
