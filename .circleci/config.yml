@@ -16,7 +16,8 @@ jobs:
       - run:
           name: run tests
           command: |
+            mkdir test-results
             flake8 --statistics
-            pytest -v --cov=main
+            pytest -v --cov=main --junitxml=test-results/junit.xml
       - store_test_results:
           path: test-results
